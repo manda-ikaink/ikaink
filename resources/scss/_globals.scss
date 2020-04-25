@@ -1,0 +1,178 @@
+/* 
+ * Global Layout
+ *
+ * 1. Assure footer stays fix to bottom of the screen.
+ * 2. Keep minimum hight and prevent scroll, useful when scrolling overlay elements to pause body scroll.
+ * 3. Offset height of fixed header.
+ */
+ html {
+	@include media-down(md) { font-size: 14px; }
+}
+
+body {
+  display: flex; // 1
+  flex-direction: column; // 1
+  min-height: 100vh; // 1
+  letter-spacing: 0.1em;
+  line-height: 2.5;
+  font-size: 1rem;
+  font-weight: 300;
+
+  &.prevent-scroll { overflow: hidden; } // 2
+
+
+  .body-bg {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    background: 
+      // linear-gradient( rgba($brand-gray-dark, 0.45), rgba($brand-gray-dark, 0.45)),
+      no-repeat url('../images/starchart.svg') center center / cover fixed,
+      no-repeat url('../images/nebula.jpg') center bottom / cover fixed,
+      $brand-gray-dark;
+  }
+}
+
+#page,
+#main-content {
+  flex: 1 1 auto; // 1
+  display: flex; // 1
+  flex-direction: column; // 1
+  width: 100%; // 1
+}
+
+#page { 
+  min-height: 100vh; // 1
+  overflow: hidden; // 1
+}
+
+/* 
+ * Global Styles
+ *
+ * 1. Display screen size breakpoint in corner of browser for QA. Remove on finalized production.
+ */
+#page { // 1
+  &:before {
+    background: #000;
+    color: #fff;
+    content: 'xs';
+    padding: 5px;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999999;
+
+    @each $point, $breakpoint in $grid-breakpoints {
+      @include media-up('#{$point}') { content: '#{$point}'; }
+    }
+  }
+}
+
+img { max-width: 100%; }
+
+.bg {
+  &--blue { background-color: $brand-blue; }
+
+  &--indigo { background-color: $brand-indigo; }
+
+  &--purple { background-color: $brand-purple; }
+
+  &--pink { background-color: $brand-pink; }
+
+  &--red { background-color: $brand-red; }
+
+  &--orange { background-color: $brand-orange; }
+
+  &--yellow { background-color: $brand-yellow; }
+
+  &--green { background-color: $brand-green; }
+
+  &--teal { background-color: $brand-teal; }
+
+  &--cyan { background-color: $brand-cyan; }
+
+  &--white { background-color: $white; }
+
+  &--black { background-color: $black; }
+
+  &--gray { background-color: $brand-gray; }
+
+  &--gray-dark { background-color: $brand-gray-dark; }
+
+  &--primary { background-color: $brand-primary; }
+
+  &--secondary { background-color: $brand-secondary; }
+
+  &--blue-purple {
+    @include linear-gradient(to bottom, $brand-blue 0%, $brand-purple 100%);
+  }
+
+  &--blue-indigo {
+    @include linear-gradient(to bottom, $brand-blue 0%, $brand-indigo 100%);
+  }
+
+  &--blue-green {
+    @include linear-gradient(to bottom, $brand-blue 0%, $brand-green 100%);
+  }
+
+  &--yellow-green {
+    @include linear-gradient(to bottom, $brand-yellow 0%, $brand-green 30%, $brand-green 100%);
+  }
+
+  &--green-teal {
+    @include linear-gradient(to bottom, $brand-green 0%, $brand-teal 100%);
+  }
+
+  &--teal-pink {
+    @include linear-gradient(to bottom, $brand-teal 0%, $brand-pink 100%);
+  }
+
+  &--pink-orange {
+    @include linear-gradient(to bottom, $brand-pink 0%, $brand-orange 100%);
+  }
+}
+
+.text {
+  &--blue { color: $brand-blue; }
+
+  &--indigo { color: $brand-indigo; }
+
+  &--purple { color: $brand-purple; }
+
+  &--pink { color: $brand-pink; }
+
+  &--red { color: $brand-red; }
+
+  &--orange { color: $brand-orange; }
+
+  &--yellow { color: $brand-yellow; }
+
+  &--green { color: $brand-green; }
+
+  &--teal { color: $brand-teal; }
+
+  &--cyan { color: $brand-cyan; }
+
+  &--white { color: $white; }
+
+  &--black { color: $black; }
+
+  &--gray { color: $brand-gray; }
+
+  &--gray-dark { color: $brand-gray-dark; }
+
+  &--primary { color: $brand-primary; }
+
+  &--secondary { color: $brand-secondary; }
+
+  &-shadow { text-shadow: 3px 3px 5px $deep-blue; }
+}
+
+.drop-shadow {
+  filter: drop-shadow(3px 3px 5px #000000);
+}

@@ -1,0 +1,110 @@
+$ol-panel-height: 100%;
+$ol-panel-width: 100%;
+$ol-panel-zindex: 1060;
+$ol-panel-transition: cubic-bezier(0.7,0,0.3,1);
+$ol-panel-timing-in: 0.8s;
+$ol-panel-timing-out: 0.4s;
+$ol-panel-focus-color: rgba($black, 0.2);
+
+/** 
+ * Customize Overlay panel basic visual appearance below
+ */
+.ol-panel {
+  *:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $ol-panel-focus-color;
+  }
+}
+
+.ol-panel-btn {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $ol-panel-focus-color;
+  }
+}
+
+.ol-panel-container {
+  &:before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: ($ol-panel-zindex - 1);
+    display: block;
+    background: rgba($black, 0.3);
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $ol-panel-timing-out $ol-panel-transition 0s, visibility 0s $ol-panel-transition $ol-panel-timing-out;
+  }
+  &--active {
+    &:before {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $ol-panel-timing-in $ol-panel-transition 0s, visibility 0s $ol-panel-transition 0s;
+    
+    }
+  }
+}
+
+/**
+ * Overlay Panel Transition
+ *
+ * Note: Not recommended to edit below unless you're looking to modify the default show/hide effects & transition
+ */
+.ol-panel {
+  overflow-y: auto;
+  position: fixed;
+  z-index: $ol-panel-zindex;
+  height: $ol-panel-height;
+  width: $ol-panel-width;
+  max-width: 100%;
+  overflow-y: auto;
+  transform: translate(-100%, -100%);
+  transition: all $ol-panel-timing-out $ol-panel-transition;
+
+  &--right { 
+    top: 0;
+    right: 0; 
+    transform: translate(100%, 0);
+  }
+
+  &--left {
+    top: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+  }
+
+  &--top {
+    top: 0;
+    transform: translate(0, -100%);
+  }
+
+  &--bottom {
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+
+  &--fade {
+    top: 0;
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+
+  &--active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all $ol-panel-timing-in cubic-bezier(0.7,0,0.3,1);
+  }
+}
+
+.ol-panel-btn {
+  cursor: pointer;
+
+  &--active {}
+
+  &--current {}
+
+  * { pointer-events: none; } // Prevent incorrect targeting of button child elements (ex. <span>) on click
+}

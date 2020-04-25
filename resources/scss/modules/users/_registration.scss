@@ -1,0 +1,17 @@
+// Registration Page
+.fusion-register {
+	padding: rem(90px) 0;
+
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.fusion-form__register {
+	width: 600px;
+	max-width: 100%;
+
+	legend,
+	.fusion-form__register-desc { text-align: center; }
+}

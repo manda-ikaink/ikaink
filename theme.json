@@ -1,0 +1,32 @@
+{
+	"name": "IKA.ink",
+	"slug": "ikaink",
+	"description": "A custom theme for ika.ink build on Fusion CMS",
+	"author": "Manda Eldreth",
+	"version": "1.0.0",
+	"public_theme": true,
+	"admin_theme": false,
+	"dependencies": {
+    "cms": "5.13.*"
+	},
+	"composers": {
+		"index": "HomepageComposer",
+		"layouts.default": "ThemeSettingsComposer",
+		"components.social-media.tags": "ThemeSettingsComposer",
+		"seo::sitemap": "SitemapComposer"
+	},
+	"settings": {
+		"public_images": "assets/images",
+		"site_logo": "assets/images/logo.png",
+		"theme_color": "#ffffff",
+		"custom_sitemap": false,
+		"images": {
+			"1x1": "assets/images/1x1.png",
+			"default": "assets/images/galaxy.jpg",
+			"loading": "assets/images/loading.svg",
+			"page-banner": "assets/images/galaxy.jpg"
+		},
+		"icons": {},
+		"pagination": {}
+	}
+}

@@ -1,0 +1,170 @@
+.text-display,
+%text-display {
+  // Display Styles
+  &--xxl  {
+    color: inherit;
+    font-family: $headings-font-family;
+    font-size: $h1-font-size;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-xl;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: uppercase;
+
+    @include media-up(md) { font-size: $h1-font-size *1.2; }
+  }
+
+  &--xl {
+    color: inherit;
+    font-family: $headings-font-family;
+    font-size: 2rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-xl;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: uppercase;
+
+    @include media-up(sm) { font-size: 2.5rem; }
+
+    @include media-up(md) { font-size: $h1-font-size; }
+  }
+
+  &--lg {
+    color: inherit;
+    font-family: $headings-font-family;
+    font-size: 2rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-lg;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: none;
+
+    @include media-up(sm) { font-size: 2.5rem; }
+
+    @include media-up(md) { font-size: $h2-font-size; }
+  }
+
+  &--md {
+    color: inherit;
+    font-family: $headings-font-family;
+    font-size: 1.75rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-lg;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: none;
+
+    @include media-up(md) { font-size: $h3-font-size; }
+  }
+
+  &--sm {
+    color: inherit;
+    font-family: $headings-font-family;
+    font-size: 1.5rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-md;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: none;
+
+    @include media-up(md) { font-size: $h4-font-size; }
+  }
+
+  &--xs {
+    color: inherit;
+    font-family: $font-family-base;
+    font-size: 1.25rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-lg;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: uppercase;
+
+    @include media-up(md) { font-size: $h5-font-size; }
+  }
+
+  &--xxs {
+    color: inherit;
+    font-family: $font-family-base;
+    font-size: 1rem;
+    font-weight: $headings-font-weight;
+    letter-spacing: $letter-spacing-header-lg;
+    line-height: $headings-line-height;
+    margin-bottom: $headings-margin-bottom;
+    // text-shadow: 5px 5px 8px $black;
+    text-transform: uppercase;
+
+    @include media-up(md) { font-size: $h6-font-size; }
+  }
+
+  // Display Colors
+  &--default { color: inherit; }
+
+  &--light { color: $white; }
+
+  &--dark { color: $black; }
+
+  small {
+    font-size: 60%;
+    font-weight: $headings-font-weight;
+  }
+}
+
+
+// Heading Styles
+h1 { @extend %text-display--xl; }
+
+h2 { @extend %text-display--lg; }
+
+h3 { @extend %text-display--md; }
+
+h4 { @extend %text-display--sm; }
+
+h5 { @extend %text-display--xs; }
+
+h6 { @extend %text-display--xxs; }
+
+p { 
+  min-height: 1.5rem; 
+  margin-bottom: 1.75rem;
+}
+
+a { 
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover { text-decoration: none; } 
+}
+
+.text-hr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: block;
+    flex: 1 0 auto;
+    height: 0;
+    width: 0;
+    margin-right: 15px;
+    border-top: 1px solid $white;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    flex: 1 0 auto;
+    height: 0;
+    width: 0;
+    margin-left: 15px;
+    border-top: 1px solid $white;
+  }
+}

@@ -1,0 +1,82 @@
+name: "Homepage"
+handle: "homepage"
+description: "Manage homepage content"
+route: ""
+template: ""
+settings:
+    seoable: 1
+    categorizable: 0
+    creditable: 0
+    navigatable: 1
+    publishable: 0
+    revisionable: 1
+types:
+    homepage:
+        name: "Homepage"
+        name_label: "Name"
+        entry_label: "Homepage"
+        route: ""
+        template: ""
+        settings:
+            searchable: 0
+            sort_by: "id"
+            sort_in: "asc"
+        fields:
+            content:
+                name: "Content"
+                type: "wysiwyg"
+                order: ""
+                group: ""
+                attributes:
+                    readonly: ""
+                    disabled: ""
+                    placeholder: ""
+                    help: ""
+                validation:
+                    required: "required"
+            share:
+                name: "share"
+                type: "content"
+                order: ""
+                group: "Share"
+                attributes: 
+                    body: '<p><strong>Open Graph Sharing</strong><br></p><p>You may set a title, description and image to use if your web page is shared on social media. If no sharing data is specified the page title and meta description will be used.</p>'
+                validation:
+                    required: ""
+            share_title:
+                name: "Share Title"
+                type: "input"
+                group: "Share"
+                attributes: 
+                    type: "text"
+                    read_only: ""
+                    disabled: ""
+                    placeholder: ""
+                    help: ""
+                    class: ""
+                validation:
+                    required: ""
+            share_description:
+                name: "Share Description"
+                type: "textarea"
+                order: ""
+                group: "Share"
+                attributes:
+                    readonly: ""
+                    disabled: ""
+                    placeholder: ""
+                    help: ""
+                validation:
+                    required: ""
+            share_image:
+                name: "Share Image"
+                type: "assets"
+                order: ""
+                group: "Share"
+                attributes:
+                    mimetype:
+                        - "image"
+                    multiSelect: ""
+                    help: "Set an image to display if your website is shared on social media. Image should be a ratio of 1.91:1, at least 600x315 pixels but 1200x630 or larger is preferred (up to 5MB)."
+                validation:
+                    required: ""

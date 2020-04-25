@@ -1,0 +1,1 @@
+<small id="{{ $id }}_help" class="help-block form-text {{ $validate ? 'invalid-feedback' : 'text-muted' }}">{{ $help }}</small>

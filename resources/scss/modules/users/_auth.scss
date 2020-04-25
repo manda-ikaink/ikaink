@@ -1,0 +1,23 @@
+// Authorization includes login, password request & password reset pages.
+//
+// General Authorization
+.fusion-auth {
+	padding: rem(90px) 0;
+
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+// Login page
+.fusion-form__login {
+	width: 500px;
+	max-width: 100%;
+	text-align: center;	
+}
+
+// Password Reset Pages
+.fusion-form__reset-email {}
+
+.fusion-form__reset {}

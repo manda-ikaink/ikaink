@@ -1,0 +1,21 @@
+// Styles General to Multiple Modules
+.fusion-form {
+	.fusion-auth &,
+	.fusion-register & {
+		border: 1px solid gray(400);
+		border-radius: $border-radius;
+		max-width: 100%;
+		padding: 15px;
+	}
+}
+
+// Users Module
+@import "users/auth";
+@import "users/registration";
+@import "users/accounts";
+
+// SEO Module
+@import "seo/sitemap";
+
+// Search Modules
+@import "search/results";

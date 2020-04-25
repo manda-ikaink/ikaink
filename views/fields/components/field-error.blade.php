@@ -1,0 +1,1 @@
+<small id="{{ $id }}_error" class="error-block form-text text-danger">{{ $error }}</small>

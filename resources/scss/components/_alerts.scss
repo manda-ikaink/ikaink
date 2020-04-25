@@ -1,0 +1,20 @@
+.alert-banner {
+  $alert-banner-bg: $primary;
+  $alert-banner-color: $white;
+  $alert-font-size: 16px;
+  $alert-padding: 10px;
+
+  padding: $alert-padding;
+  font-size: 16px;
+  background: $alert-banner-bg;
+
+  &__content {
+    @extend %no-bottom;
+    color: $alert-banner-color;
+
+    a:not(.btn) {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}

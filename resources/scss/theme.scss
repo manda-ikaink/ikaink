@@ -1,0 +1,76 @@
+/*
+ * 
+	- Folder Table of Content -
+	
+	Components: Stand alone styles for specific html structures & elements.
+	Navigation: Styles specific to navigation menus.
+	Helpers:    Includes Sass functions & extends/placeholders.
+	Plugins:    Styles overrides or additions for JS plugins.
+	Layout:     Containers & structures that make up the site's general layout.
+	Mixins:     Custom Sass helper mixins.
+	Modules:    Styles for CMS module components or pages (eg. login, registration and user accounts, sitemap, search results, etc...). 
+	            If these view templates are copied into your theme for modification, still keep their styles in "Modules" directory.
+	Pages:      Styles unique and specific to page templates or modules (eg. blog, services, homepage, etc...)
+
+
+	- Other Files -
+	
+	_fonts.scss:      Include custom fonts here.
+	_framework.scss:  Customize your bootstrap build as needed.
+	_globals.scss:    Global site styles (usually related to <html>, <body> or styles applied to direct html elements).
+	_typography.scss: Heading and text styles.
+	_variables.scss:  Override bootstrap variables here.
+	_vendor.scss:     Compile all 3rd party libraries into a separate file.
+
+	NOTES:
+	Included image & font paths are relative to scss folder. For Example:
+
+ 	background: url('../images/galaxy.png');  
+
+ 	@font-face {
+		font-famly: 'Roboto';
+		src: url('../fonts/Roboto.eot');
+	}
+ *
+ */
+
+// Required
+@import "framework"; // Bootstrap 4 Framework, contains variable overrides
+
+// Mixins
+@import "mixins/breakpoints"; // Mixin for shorter breakpoint includes (ex. @include media-up(lg))
+@import "mixins/burger"; // Mixing for generating a hamburger icon and it's "active" state
+@import "mixins/gradients"; // Mixin for generating gradients
+
+// Helpers
+@import "helpers/functions";
+@import "helpers/extends";
+
+// Globals
+@import "fonts";
+@import "globals";
+@import "typography";
+
+// Plugins
+@import "plugins/lazy-sizes";
+
+// Components
+// Includes custom components and style overrides for bootstrap components
+@import "components/alerts";
+@import "components/banners";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/ol-panel";
+@import "components/social-links";
+
+// Layout
+@import "layout/containers";
+@import "layout/sidebars";
+@import "layout/header";
+@import "layout/footer";
+
+// Modules
+@import "modules/modules";
+
+// Pages
+@import "pages/homepage";

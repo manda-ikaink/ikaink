@@ -1,0 +1,80 @@
+.page-header {
+	$header-transition: 0.3s ease;
+	
+	@include linear-gradient(
+		to bottom, 
+		transparent, 
+		rgba($almost-black, 0.7) 0%, 
+		rgba($almost-black, 0.5) 50%, 
+		rgba($almost-black, 0) 100%);
+	padding: 1rem 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	width: 100%;
+	transition: all $header-transition;
+	z-index: $zindex-fixed;
+
+	.scrolled & {
+		@include linear-gradient(
+			to bottom, 
+			transparent, 
+			rgba($almost-black, 0.9) 0%, 
+			rgba($almost-black, 0.9) 50%, 
+			rgba($almost-black, 0.9) 100%);
+		padding: .5rem;
+	}
+
+	&__logo {
+		color: $white;
+		display: inline-block;
+		font-family: $headings-font-family;
+		font-weight: lighter;
+		letter-spacing: 0.15em;
+		margin: 0 auto;
+		vertical-align: middle;
+		transition: all $header-transition;
+
+		&--center {
+			display: inline-block;
+			width: 90px;
+			height: auto;
+			transition: all $header-transition; 
+			vertical-align: middle;
+
+			.scrolled & { width: 60px; }
+		}
+
+		&--left,
+		&--right {
+			display: none;
+			padding: 15px 30px;
+			font-size: 18px;
+			font-weight: lighter;
+			letter-spacing: 13px;
+			color: $white;
+			transition: all $header-transition;
+			text-shadow: 3px 3px 5px #000000;
+
+			@include media-up(sm) { display: inline-block; }
+
+			.scrolled & { opacity: 0; }
+		}
+
+		&--left { order: -1; }
+	}
+
+	&__nav-toggle {
+		margin: -15px 30px 0;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		z-index: 9999;
+	}
+
+	&__menu-btn {
+		@include burger($width: 40px, $height: 3px, $gutter: 10px, $color: #fff)
+	}
+}

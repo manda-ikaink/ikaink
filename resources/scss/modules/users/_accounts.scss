@@ -1,0 +1,116 @@
+// Accounts includes overview, profile and password change pages.
+//
+// Account Page Globals
+.fusion-account {
+	display: flex;
+	justify-content: center;
+	padding: rem(50px) 0;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	// Account Page Title
+	&__title {
+		border-bottom: 1px solid $gray-400;
+		margin-bottom: 30px;
+	}
+
+	// Account Sidebar
+	&__sidebar {
+		display: flex;
+		flex: 0 0 100%;
+		flex-direction: column;
+		max-width: 100%;
+		padding: 0 15px;
+		width: 100%;
+
+		@include media-up(md) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	// Account Navigation Menu
+	&__nav {
+		border-bottom: 1px solid $gray-400;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+	}
+
+	// Account Navigation Links
+	&__nav-link {
+		border-top: 1px solid $gray-400;
+		display: flex;
+		padding: 10px;
+	    width: 100%;
+
+		&:hover,
+		&:focus,
+		&:active { background: $gray-400; }
+
+		&--active {
+			background: theme-color('primary');
+			color: $white;
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+
+	&__avatar {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+
+		img {
+			border: 1px solid $gray-400;
+			border-radius: 100%;
+			padding: 8px;
+		}
+	}
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 30px 15px;
+		width: 100%;
+
+		@include media-up(md) {
+			flex: 0 0 75%;
+			max-width: 75%;
+			padding: 30px;
+		}
+
+		dl {
+			@include media-up(sm) { columns: 2; }
+		}
+
+		dd {
+			margin-bottom: 15px;
+			
+			@include media-up(sm) { break-before: avoid; }
+		}
+	}
+
+	// New sub-section within fusion-account scope
+	.account-section {
+		margin-top: 30px;
+
+		&__title {}
+	}
+}
+
+// Account Index Page
+.fusion-account-index {}
+
+// Account Profile Page
+.fusiion-account-profile {}
+
+// Account Password Change Page
+.fusion-account-password {}

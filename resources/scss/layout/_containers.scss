@@ -1,0 +1,51 @@
+.page-content,
+%page-content {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.page,
+%page {
+  padding-top: rem(180px);
+  padding-bottom: rem(100px);
+}
+
+// Styled sections
+.section-nebula,
+%section-nebula {
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    background: 
+      // linear-gradient( rgba($brand-gray-dark, 0.45), rgba($brand-gray-dark, 0.45)),
+      no-repeat url('../../images/starchart.svg') center center / cover fixed,
+      no-repeat url('../../images/nebula.jpg') center bottom / cover fixed,
+      $brand-gray-dark;
+  }
+}
+
+.section-starchart,
+%section-starchart {
+  background: 
+    // linear-gradient( rgba($brand-gray-dark, 0.45), rgba($brand-gray-dark, 0.45)),
+    no-repeat url('../../images/starchart.svg') center center / cover fixed,
+    no-repeat url('../../images/nebula-bg-original.jpg') center center / cover fixed,
+    $almost-black;
+}
+
+.section-starchart-milkyway,
+%section-starchart-milkyway {
+  background: 
+    // linear-gradient( rgba($almost-black, 0.25), rgba($almost-black, 0.25)),
+    no-repeat url('../../images/starchart.svg') center center / cover fixed,
+    no-repeat url('../../images/milkyway1.jpg') center center / cover fixed,
+    $almost-black;
+}

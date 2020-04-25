@@ -1,0 +1,36 @@
+$social-list-bg: $primary;
+$social-list-hover-bg: $white;
+$social-list-border: 0;
+$social-list-hover-border: 0;
+$social-list-border-radius: 100%;
+$social-list-color: $white;
+$social-list-hover-color: $primary;
+$social-list-size: 16px;
+$social-list-height: 30px;
+$social-list-width: 30px;
+$social-list-margin: 0 3px 10px;
+
+.social-list {
+  &__item { margin: $social-list-margin; }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $social-list-height;
+    width: $social-list-width;
+    font-size: $social-list-size;
+    background: $social-list-bg;
+    border: $social-list-border;
+    border-radius: $social-list-border-radius;
+    color: $social-list-color;
+    text-decoration: none;
+
+    &:hover {
+      background: $social-list-hover-bg;
+      border: $social-list-hover-border;
+      color: $social-list-hover-color;
+      text-decoration: none;
+    }
+  }
+}
