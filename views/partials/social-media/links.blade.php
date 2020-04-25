@@ -1,10 +1,10 @@
-@if ($facebook or $instagram or $pinterest or $twitter or $youtube or $linkedin)
+@if ($github or $instagram or $pinterest or $twitter or $youtube or $linkedin)
   <ul class="social-list {{ $class ?? null }} list-unstyled d-flex">
-    @if ($facebook)
+    @if ($github)
       <li class="social-list__item">
-        <a class="social-list__link" href="{{ $facebook }}" target="_blank" rel="noopener">
-          <span class="sr-only">Facebook</span>
-          <span class="fab fa-facebook-f fa-fw" aria-hidden="true"></span>
+        <a class="social-list__link" href="{{ $github }}" target="_blank" rel="noopener">
+          <span class="sr-only">Github</span>
+          <span class="fab fa-github fa-fw" aria-hidden="true"></span>
         </a>
       </li>
     @endif

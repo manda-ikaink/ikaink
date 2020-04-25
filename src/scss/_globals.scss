@@ -20,7 +20,6 @@ body {
 
   &.prevent-scroll { overflow: hidden; } // 2
 
-
   .body-bg {
     display: block;
     position: fixed;
@@ -30,7 +29,6 @@ body {
     height: 100vh;
     z-index: -10;
     background: 
-      // linear-gradient( rgba($brand-gray-dark, 0.45), rgba($brand-gray-dark, 0.45)),
       no-repeat url('../assets/images/starchart.svg') center center / cover fixed,
       no-repeat url('../assets/images/nebula.jpg') center bottom / cover fixed,
       $brand-gray-dark;
@@ -75,7 +73,9 @@ body {
 
 img { max-width: 100%; }
 
-.bg {
+// Backgrounds
+.bg,
+%bg {
   &--blue { background-color: $brand-blue; }
 
   &--indigo { background-color: $brand-indigo; }
@@ -173,6 +173,4 @@ img { max-width: 100%; }
   &-shadow { text-shadow: 3px 3px 5px $deep-blue; }
 }
 
-.drop-shadow {
-  filter: drop-shadow(3px 3px 5px #000000);
-}
+.drop-shadow { filter: drop-shadow(3px 3px 5px #000000); }

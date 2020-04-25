@@ -1,14 +1,14 @@
-$social-list-bg: $primary;
-$social-list-hover-bg: $white;
+$social-list-bg: rgba($white, 0.3);
+$social-list-hover-bg: $pink;
 $social-list-border: 0;
 $social-list-hover-border: 0;
 $social-list-border-radius: 100%;
 $social-list-color: $white;
-$social-list-hover-color: $primary;
-$social-list-size: 16px;
-$social-list-height: 30px;
-$social-list-width: 30px;
-$social-list-margin: 0 3px 10px;
+$social-list-hover-color: $white;
+$social-list-size: 20px;
+$social-list-height: 40px;
+$social-list-width: 40px;
+$social-list-margin: 0 5px 5px;
 
 .social-list {
   &__item { margin: $social-list-margin; }
@@ -26,7 +26,9 @@ $social-list-margin: 0 3px 10px;
     color: $social-list-color;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background: $social-list-hover-bg;
       border: $social-list-hover-border;
       color: $social-list-hover-color;

@@ -1,17 +1,22 @@
-$footer-bg-color: $gray-200;
-$footer-color: $body-color;
-$footer-padding: 30px 0;
-$footer-text-size: rem(16px);
-
 .page-footer {
-  padding: $footer-padding;
-  font-size: $footer-text-size;
-  background: $footer-bg-color;
-  color: $footer-color;
+  @include linear-gradient(
+		to top, 
+		transparent, 
+		rgba($almost-black, 0.4) 0%, 
+		rgba($almost-black, 0.2) 30%, 
+		rgba($almost-black, 0) 100%);
+  font-size: 14px;
 
-  &__nav {}
-
-  &__social {}
-
-  &__copyright {}
+  &__copyright {
+    a {
+      color: $white;
+  
+      &:hover,
+      &:focus,
+      &:active {
+        color: $white;
+        text-shadow: 0 0 5px $white;
+      }
+    }
+  }
 }

@@ -1,0 +1,20 @@
+.modal-content {
+    @extend %bg--green-teal;
+    color: $almost-black;
+
+    a {
+        color: $deep-blue;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            color: $pink;
+            text-decoration: none;
+        }
+
+        &:active {
+            color: $almost-black;
+            text-decoration: none;
+        }
+    }
+}

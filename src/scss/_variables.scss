@@ -81,6 +81,8 @@ $letter-spacing-header-md:    0.2em;
 $letter-spacing-header-sm:    0.15em;
 $letter-spacing-header-xs:    0.1em;
 
+$text-shadow: 3px 3px 5px #000000; 
+
 // Custom Colors
 $almost-black:              #03030d;
 $bruise:                    #23202e;
@@ -954,18 +956,18 @@ $modal-dialog-margin-y-sm-up:       1.75rem !default;
 $modal-title-line-height:           $line-height-base !default;
 
 $modal-content-bg:                  $white !default;
-$modal-content-border-color:        rgba($black, .2) !default;
-$modal-content-border-width:        $border-width !default;
-$modal-content-border-radius:       $border-radius-lg !default;
+$modal-content-border-color:        transparent !default;
+$modal-content-border-width:        0 !default;
+$modal-content-border-radius:       0 !default;
 $modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
 $modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;
 
 $modal-backdrop-bg:                 $black !default;
 $modal-backdrop-opacity:            .5 !default;
-$modal-header-border-color:         $gray-200 !default;
-$modal-footer-border-color:         $modal-header-border-color !default;
-$modal-header-border-width:         $modal-content-border-width !default;
-$modal-footer-border-width:         $modal-header-border-width !default;
+$modal-header-border-color:         $green !default;
+$modal-footer-border-color:         $green !default;
+$modal-header-border-width:         1px !default;
+$modal-footer-border-width:         1px !default;
 $modal-header-padding-y:            1rem !default;
 $modal-header-padding-x:            1rem !default;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
@@ -1094,8 +1096,8 @@ $carousel-transition:                transform .6s ease !default; // Define tran
 
 $close-font-size:                   $font-size-base * 1.5 !default;
 $close-font-weight:                 $font-weight-bold !default;
-$close-color:                       $black !default;
-$close-text-shadow:                 0 1px 0 $white !default;
+$close-color:                       $almost-black !default;
+$close-text-shadow:                 0 !default;
 
 
 // Code

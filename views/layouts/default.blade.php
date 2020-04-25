@@ -33,6 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ theme('dist/'.theme_mix('/theme.css', 'dist')) }}">
 	
 	{{-- Head script stack --}}
+	<script src="https://kit.fontawesome.com/c55718a3e4.js" crossorigin="anonymous"></script>
 	@if ($globals)
 	@include('partials.script-manager.scripts',['scripts' => $globals->head_scripts])
 	@endif

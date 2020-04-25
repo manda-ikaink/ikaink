@@ -135,6 +135,11 @@ p {
   margin-bottom: 1.75rem;
 }
 
+ul,
+ol { margin-bottom: 1.75rem; }
+
+ul { padding-left: 20px; }
+
 a { 
   text-decoration: none;
   transition: $transition-base;

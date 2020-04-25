@@ -30,12 +30,7 @@
 
 {{-- Template Content --}}
 @section('content')
-  {{-- <div class="moon-object">
-    <div class="moon-object__container">
-      <div class="moon-object__moon"></div>
-    </div>
-  </div> --}}
-  <div class="home-hero d-flex align-items-center justify-content-center jarallax">
+  <div class="home-hero d-flex align-items-center justify-content-center">
     {{-- Star Object --}}
     <div class="star-object">
       <div class="star-object__star"></div>
@@ -48,12 +43,12 @@
       <div class="home-hero__content position-relative">
         <h2 class="hero-title text-center text-lg-left">
           <span class="home-hero__hover" role="tablist">
-            <a href="#art-nav" id="art-link" class="home-hero__link" title="View Art"> Art, </a>
-            <br><a href="#notes-nav" id="notes-link" class="home-hero__link" title="View Notes"> Notes, </a>
-            <br><a href="#projects-nav" id="projects-link" class="home-hero__link" title="View Projects"> Projects, </a>
+            <a href="#art-nav" id="art-link" class="home-hero__link" title="View Art & Illustrations"> Art, </a>
+            <br><a href="#notes-nav" id="notes-link" class="home-hero__link" title="View Scrapbok of Notes"> Notes, </a>
+            <br><a href="#projects-nav" id="projects-link" class="home-hero__link" title="View Development Projects"> Projects </a>
           </span>
           <span class="hero-subtitle d-block"> by </span>
-          <span class="hero-subtitle d-block">Amanda Eldreth</span>
+          <span class="hero-subtitle d-block"><a class="text-display--default" href="/about">Amanda Eldreth</a></span>
         </h2>
       </div>
     </div>
