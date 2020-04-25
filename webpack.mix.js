@@ -15,13 +15,13 @@ const production = process.env.NODE_ENV === 'production'
 const sourceMap = production ? '' : 'inline-source-map'
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-mix.setPublicPath('assets')
+mix.setPublicPath('dist')
   .setResourceRoot('./')
   .autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],
     'popper.js/dist/umd/popper.js': ['Popper', 'window.Popper'] // Must require umd version
   })
-  .js('resources/js/theme.js', 'theme.js')
+  .js('src/js/theme.js', 'theme.js')
   .extract([
     'vue',
     'jquery',
@@ -29,13 +29,13 @@ mix.setPublicPath('assets')
     'lazysizes',
     'popper.js'
   ])
-  .sass('resources/scss/theme.scss', 'assets/theme.css')
-  .sass('resources/scss/vendor.scss', 'assets/vendor.css')
+  .sass('src/scss/theme.scss', 'dist/theme.css')
+  .sass('src/scss/vendor.scss', 'dist/vendor.css')
   .sourceMaps()
   .version()
   .options({
     extractVueStyles: false,
-    processCssUrls: true,
+    processCssUrls: false,
     imgLoaderOptions: {
       enabled: false
     }
@@ -43,23 +43,21 @@ mix.setPublicPath('assets')
   .babelConfig({
     presets: [
       ['@babel/preset-env', {
-        targets: '> 0.2%, last 2 versions, not ie <= 10, Firefox ESR, safari >= 7, ios_saf >= 7',
+        targets: '> 1%, last 2 versions, Firefox ESR',
         loose: true, // Enable "loose" transformations for any plugins in this preset that allow them
         modules: false,
         useBuiltIns: 'usage',
-        corejs: '^3.4.1',
+        corejs: '^3.6.5',
         debug: true
       }]
     ]
   })
 
-mix.copy('resources/images', 'assets/images')
-
 mix.webpackConfig({
   devtool: sourceMap,
   plugins: [
     new FaviconsWebpackPlugin({
-      logo: './resources/images/favicon.png',
+      logo: './assets/images/favicon.png',
       outputPath: '/favicons',
       cache: true,
       inject: false,

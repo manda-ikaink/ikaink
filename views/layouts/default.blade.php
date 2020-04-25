@@ -25,12 +25,12 @@
 	{{-- Google Analytics --}}
 	@include('analytics::partials.tracking_code')
 
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme('assets/favicons/apple-touch-icon.png') }}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{{ theme('assets/favicons/favicon-16x16.png') }}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{ theme('assets/favicons/favicon-32x32.png') }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme('dist/favicons/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ theme('dist/favicons/favicon-16x16.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ theme('dist/favicons/favicon-32x32.png') }}">
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ theme('assets/'.theme_mix('/vendor.css', 'assets')) }}">
-	<link rel="stylesheet" type="text/css" href="{{ theme('assets/'.theme_mix('/theme.css', 'assets')) }}">
+	<link rel="stylesheet" type="text/css" href="{{ theme('dist/'.theme_mix('/vendor.css', 'dist')) }}">
+	<link rel="stylesheet" type="text/css" href="{{ theme('dist/'.theme_mix('/theme.css', 'dist')) }}">
 	
 	{{-- Head script stack --}}
 	@if ($globals)
@@ -99,9 +99,9 @@
 	<div class="body-bg"></div>
 
 	{{-- Body-bottom script stack --}}
-	<script src="{{ theme('assets/'.theme_mix('/manifest.js', 'assets')) }}"></script>
-	<script src="{{ theme('assets/'.theme_mix('/vendor.js', 'assets')) }}"></script>
-	<script src="{{ theme('assets/'.theme_mix('/theme.js', 'assets'))  }}"></script>
+	<script src="{{ theme('dist/'.theme_mix('/manifest.js', 'dist')) }}"></script>
+	<script src="{{ theme('dist/'.theme_mix('/vendor.js', 'dist')) }}"></script>
+	<script src="{{ theme('dist/'.theme_mix('/theme.js', 'dist'))  }}"></script>
 	@if ($globals)
 	@include('partials.script-manager.scripts',['scripts' => $globals->btm_scripts])
 	@endif

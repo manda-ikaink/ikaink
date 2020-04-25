@@ -31,8 +31,8 @@ body {
     z-index: -10;
     background: 
       // linear-gradient( rgba($brand-gray-dark, 0.45), rgba($brand-gray-dark, 0.45)),
-      no-repeat url('../images/starchart.svg') center center / cover fixed,
-      no-repeat url('../images/nebula.jpg') center bottom / cover fixed,
+      no-repeat url('../assets/images/starchart.svg') center center / cover fixed,
+      no-repeat url('../assets/images/nebula.jpg') center bottom / cover fixed,
       $brand-gray-dark;
   }
 }
