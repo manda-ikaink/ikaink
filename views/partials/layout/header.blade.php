@@ -1,3 +1,4 @@
+{{-- $globals variable inherited from layouts/default.blade.php --}}
 <header id="page-header" class="page-header">
 	<div class="container-fluid">
 		@if ($isHome)

@@ -42,13 +42,24 @@
     <div class="home-hero__container container d-flex align-items-center justify-content-center justify-content-lg-start">
       <div class="home-hero__content position-relative">
         <h2 class="hero-title text-center text-lg-left">
-          <span class="home-hero__hover" role="tablist">
-            <a href="#art-nav" id="art-link" class="home-hero__link" title="View Art & Illustrations"> Art, </a>
-            <br><a href="#notes-nav" id="notes-link" class="home-hero__link" title="View Scrapbok of Notes"> Notes, </a>
-            <br><a href="#projects-nav" id="projects-link" class="home-hero__link" title="View Development Projects"> Projects </a>
-          </span>
+					@unless ($homepage->heading->isEmpty())
+          <span class="home-hero__hover">
+						@foreach ($homepage->heading as $item)
+							@php $item = $item['data'] @endphp
+							<a href="{{ $item['link'] }}" class="home-hero__link" title="{{ $item['title'] }}">{{ $item['name'] }}</a>{!! $loop->last ? '' : '<br>' !!}
+						@endforeach
+					</span>
+					@else
+						<span>Art, Illustration, Development</span>
+					@endunless
+					@if ($homepage->author)
           <span class="hero-subtitle d-block"> by </span>
-          <span class="hero-subtitle d-block"><a class="text-display--default" href="/about">Amanda Eldreth</a></span>
+          <span class="hero-subtitle d-block">
+						@if ($homepage->author_link)<a class="home-hero__link" href="{{ $homepage->author_link }}">@endif
+							{{ $homepage->author }}
+						@if ($homepage->author_link)</a>@endif
+					</span>
+					@endif
         </h2>
       </div>
     </div>

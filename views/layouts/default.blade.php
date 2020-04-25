@@ -55,12 +55,15 @@
 			@include('partials.layout.header', ['isHome' => false])
 		@endif
 
-		{{-- Alert Banner Top --}}
+		{{-- Alert Banner --}}
 		@if ($globals)
+			@if ($globals->alert_banner_display)
 			@include('partials.alerts.alert-banner', [
 				'content' => $globals->alert_banner,
-				'display' => $globals->alert_banner_display === 'top'
+				'display' => $globals->alert_banner_display,
+				'color'   => $globals->alert_banner_color
 				])
+			@endif
 		@endif
 
 		<main id="main-content"@hasSection('main-class') class="@yield('main-class')"@endif>
@@ -82,14 +85,6 @@
 
 		  @stack('after')
 		</main>
-
-		{{-- Alert Banner Bottom --}}
-		@if ($globals)
-			@include('partials.alerts.alert-banner', [
-				'content' => $globals->alert_banner,
-				'display' => $globals->alert_banner_display === 'bottom'
-				])
-		@endif
 
 		@hasSection('homepage')
 			@include('partials.layout.footer', ['isHome' => true])

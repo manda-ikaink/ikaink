@@ -4,9 +4,25 @@
   $alert-font-size: 16px;
   $alert-padding: 10px;
 
+  position: fixed;
   padding: $alert-padding;
   font-size: 16px;
-  background: $alert-banner-bg;
+  // background: $alert-banner-bg;
+  z-index: 1050;
+
+  &--top {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &--bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 
   &__content {
     @extend %no-bottom;

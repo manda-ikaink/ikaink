@@ -35,7 +35,7 @@
 				
 					&:hover {
 						color: $white;
-						text-shadow: 3px 3px 5px $deep-blue;
+						text-shadow: 0 0 5px $white!important;
 					}
 
 					&:focus { text-shadow: 0 0 5px $white!important; }
@@ -51,14 +51,12 @@
     transition: all 0.35s cubic-bezier(.17,.67,.83,.67);
     
     &:hover,
-    &:focus { color: inherit; }
+    &:focus { 
+      color: inherit; 
+      text-shadow: 0 0 5px $white;
+    }
 
     @include media-up(lg) { width: 100%; }
-
-		@include media-down(md) {
-            &:hover,
-            &:focus { text-shadow: 0 0 5px $white; }
-		}
 	}
 }
 
