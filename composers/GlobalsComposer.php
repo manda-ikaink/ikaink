@@ -32,6 +32,18 @@ class GlobalsComposer
   }
 
   /**
+    *  Get Single Entry Info
+    *
+    *  @param    string       $collection   Name of the collection
+    *  @param    string       $type       Name of the list type
+    *  @return   object|null
+    */
+    protected function getEntry($viewData)
+    {
+      return $viewData->has('entry') ? $viewData->get('entry') : null;
+    }
+
+  /**
    *  Get Matrix Categories
    *
    *  @param    string       $name   Name of the category

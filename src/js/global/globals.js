@@ -6,6 +6,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import header from '../custom/transHeader'
 // import overlay from '../custom/ol-panel'
 import 'bootstrap/js/dist/modal'
+import 'bootstrap/js/dist/collapse'
 
 export default class Globals {
   constructor () {

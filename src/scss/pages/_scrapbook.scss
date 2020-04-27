@@ -1,0 +1,98 @@
+.scrapbook-header {
+    padding-top: 150px;
+    background: $deep-blue;
+
+    &__filters {
+        font-weight: bold;
+
+        a {
+            color: $white;
+
+            &:hover,
+            &:focus,
+            &:active { 
+                color: $white; 
+                text-shadow: 0 0 5px $white;
+            }
+        }
+    }
+
+    .active-filter {
+        @extend %bg--green-teal;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.5;
+        padding: 3px 7px;
+        border-radius: 3px;
+        color: $white;
+    }
+}
+
+.scrapbook-listing {
+    flex: 1 1 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: rgba($almost-black, 0.5);
+}
+
+.scrapbook-card {
+    font-size: 14px;
+    background: $white;
+    color: $deep-blue;
+
+    &__image {
+        position: relative;
+        overflow: hidden;
+        background: $gray-100 url('../assets/images/loading.svg') no-repeat center center;
+
+        &--1-1 { padding-top: 100%; }
+
+        &--16-9 { padding-top: 56.25%; }
+
+        &--4-3 { padding-top: 75%; }
+
+        &--v-4-3 { padding-top: 127%; }
+        
+        &:hover,
+        &:focus {
+            img { transform: translate(-50%,-50%) scale(1.0); }
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+    }
+
+    &__content { 
+        padding: 20px 15px; 
+        line-height: 1.5;
+    }
+
+    &__title { 
+        font-size: 16px; 
+
+        a {
+            color: inherit;
+
+            &:hover,
+            &:focus,
+            &:active { color: $pink; }
+        }
+    }
+
+    &__categories {
+        border-top: 1px solid $gray-200;
+
+        a {
+            color: $pink;
+    
+            &:hover,
+            &:focus,
+            &:active { color: $blue; }
+        }
+    }
+}

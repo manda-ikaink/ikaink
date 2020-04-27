@@ -67,16 +67,16 @@ $banner-sub-size-mobile: rem(20px);
 
 	&__img {
 		position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    width: 100%;
-    width: auto;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: none;
-    margin-bottom: 0;
-    transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+		z-index: 0;
+		width: 100%;
+		width: auto;
+		min-width: 100%;
+		min-height: 100%;
+		max-width: none;
+		margin-bottom: 0;
+		transform: translate(-50%, -50%);
 	}
 }
 

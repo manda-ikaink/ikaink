@@ -1,0 +1,19 @@
+.masonry-grid {
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+
+    // @include media-up(sm) { width: 700px }
+
+    @include media-up(md) { width: 700px }
+
+    @include media-up(xl) { width: 1050px }
+
+    @include media-up(xxl) { width: 1400px }
+
+    &__item { 
+        width: 350px;
+        max-width: 100%; 
+        padding: 7px;
+    }
+}

@@ -824,33 +824,33 @@ $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
 
 // Pagination
 
-$pagination-padding-y:              .5rem !default;
+$pagination-padding-y:              .2rem !default;
 $pagination-padding-x:              .75rem !default;
 $pagination-padding-y-sm:           .25rem !default;
 $pagination-padding-x-sm:           .5rem !default;
 $pagination-padding-y-lg:           .75rem !default;
 $pagination-padding-x-lg:           1.5rem !default;
-$pagination-line-height:            1.25 !default;
+$pagination-line-height:            1 !default;
 
-$pagination-color:                  $link-color !default;
-$pagination-bg:                     $white !default;
-$pagination-border-width:           $border-width !default;
-$pagination-border-color:           $gray-300 !default;
+$pagination-color:                  $white !default;
+$pagination-bg:                     transparent !default;
+$pagination-border-width:           0 !default;
+$pagination-border-color:           transparent !default;
 
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
-$pagination-focus-outline:          0 !default;
+$pagination-focus-outline:          1px !default;
 
-$pagination-hover-color:            $link-hover-color !default;
-$pagination-hover-bg:               $gray-200 !default;
-$pagination-hover-border-color:     $gray-300 !default;
+$pagination-hover-color:            $white !default;
+$pagination-hover-bg:               $pink !default;
+$pagination-hover-border-color:     transparent !default;
 
-$pagination-active-color:           $component-active-color !default;
-$pagination-active-bg:              $component-active-bg !default;
-$pagination-active-border-color:    $pagination-active-bg !default;
+$pagination-active-color:           $white !default;
+$pagination-active-bg:              transparent !default;
+$pagination-active-border-color:    transparent !default;
 
-$pagination-disabled-color:         $gray-600 !default;
-$pagination-disabled-bg:            $white !default;
-$pagination-disabled-border-color:  $gray-300 !default;
+$pagination-disabled-color:         rgba($white, 0.5) !default;
+$pagination-disabled-bg:            transparent !default;
+$pagination-disabled-border-color:  transparent !default;
 
 
 // Jumbotron

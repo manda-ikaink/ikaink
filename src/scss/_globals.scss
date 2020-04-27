@@ -29,8 +29,8 @@ body {
     height: 100vh;
     z-index: -10;
     background: 
-      no-repeat url('../assets/images/starchart.svg') center center / cover fixed,
-      no-repeat url('../assets/images/nebula.jpg') center bottom / cover fixed,
+      no-repeat url('../assets/images/starchart.svg') center center / cover,
+      no-repeat url('../assets/images/nebula.jpg') center bottom / cover,
       $brand-gray-dark;
   }
 }

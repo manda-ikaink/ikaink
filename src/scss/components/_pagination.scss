@@ -1,0 +1,17 @@
+.pagination {
+    .page-item {
+        border-right: 1px solid $white;
+
+        &:first-child {
+            .page-link { border-radius: 0; }
+        }
+
+        &:last-child { 
+            border-right: 0; 
+            .page-link { border-radius: 0; }
+        }
+    }
+    .page-link {
+        border-radius: 0;
+    }
+}
