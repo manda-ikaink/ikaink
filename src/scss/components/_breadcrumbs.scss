@@ -1,1 +1,9 @@
-.breadcrumb-wrapper { background: $breadcrumb-bg; }
+.breadcrumbs {
+    &__link {
+        font-size: 14px;
+        color: $white;
+
+        &:hover,
+        &:focus { color: $green; }
+    }
+}

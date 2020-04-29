@@ -1,0 +1,40 @@
+.page-text {}
+
+.page-images {
+    &__figure {
+        width: 1000px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+        background: $white;
+        color: $deep-blue;
+
+        @include media-up(lg) { padding: 10px; }
+    }
+
+    &__caption {}
+
+    &__image {
+        flex-basis: 0;
+        flex-grow: 1;
+        width: auto;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 5px;
+
+        @include media-up(sm) {
+            min-width: 50%; 
+        }
+
+        @include media-up(lg) { 
+            padding: 10px;
+            min-width: 33.3333333%; 
+        }
+    }
+}
+
+.page-gallery {}
+
+.page-video {}
+
+.page-code {}

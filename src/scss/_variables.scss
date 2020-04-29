@@ -279,7 +279,7 @@ $body-color:                $white !default;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                $pink !default;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
@@ -418,7 +418,7 @@ $blockquote-small-color:      $gray-600 !default;
 $blockquote-small-font-size:  $small-font-size !default;
 $blockquote-font-size:        ($font-size-base * 1.25) !default;
 
-$hr-border-color:             rgba($black, .1) !default;
+$hr-border-color:             rgba($white, .15) !default;
 $hr-border-width:             $border-width !default;
 
 $mark-padding:                .2em !default;
@@ -1058,14 +1058,14 @@ $breadcrumb-padding-y:              .75rem !default;
 $breadcrumb-padding-x:              1rem !default;
 $breadcrumb-item-padding:           .5rem !default;
 
-$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          0 !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider-color:          $white!default;
+$breadcrumb-active-color:           $green !default;
 $breadcrumb-divider:                quote("/") !default;
 
-$breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-border-radius:          0 !default;
 
 
 // Carousel

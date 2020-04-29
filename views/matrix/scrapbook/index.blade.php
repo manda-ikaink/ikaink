@@ -83,10 +83,10 @@
 
                         @if ($post->categories->count())
                         <div class="scrapbook-card__categories pt-3">
-                        <span class="fas fa-tag fa-fw"></span>
-                        @foreach($post->categories as $postcat)
-                            <a href="{{ url($postcat->path()) }}">{{ $postcat->name }}</a>@unless($loop->last), @endunless
-                        @endforeach
+                            <span class="fas fa-tag fa-fw"></span>
+                            @foreach($post->categories as $postcat)
+                                <a href="{{ url($postcat->path()) }}">{{ $postcat->name }}</a>@unless($loop->last), @endunless
+                            @endforeach
                         </div>
                         @endif
                     </div>
