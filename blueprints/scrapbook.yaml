@@ -1,27 +1,88 @@
-name: "Pages"
-handle: "pages"
-description: "Basic pages for your site"
-route: ""
-template: ""
+name: Scrapbook
+handle: scrapbook
+description: ''
+route: scrapbook
+template: matrix.scrapbook.index
 settings:
-    seoable: 1
-    categorizable: 0
-    creditable: 0
-    navigatable: 1
-    publishable: 0
-    revisionable: 1
+    icon: ''
+    seoable: '1'
+    creditable: '0'
+    publishable: '1'
+    revisionable: '0'
+    show_sidebar: '1'
+    categorizable: '1'
+    show_quick_link: '1'
 types:
-    pages:
-        name: "Pages"
-        name_label: "Name"
-        entry_label: "Page"
-        route: "{slug}"
-        template: "matrix.pages.show"
-        settings:
-            searchable: 1
-            sort_by: "name"
-            sort_in: "asc"
+    posts:
+        name: Posts
+        description: ''
+        route: '{slug}'
+        template: matrix.scrapbook.post
         fields:
+            display_name:
+                name: 'Display Name'
+                type: input
+                group: General
+                attributes:
+                    type: text
+                    readonly: ''
+                    disabled: ''
+                    placeholder: ''
+                    help: ''
+                    class: ''
+                validation:
+                    required: ''
+            headline:
+                name: Headline
+                type: input
+                group: General
+                attributes:
+                    type: text
+                    readonly: ''
+                    disabled: ''
+                    placeholder: ''
+                    help: ''
+                    class: ''
+                validation:
+                    required: ''
+            aspect_ratio:
+                name: 'Aspect Ratio'
+                type: select
+                group: General
+                attributes:
+                    multiple: ''
+                    readonly: ''
+                    disabled: ''
+                    placeholder: ''
+                    help: ''
+                    class: ''
+                    options:
+                        -
+                            checked: '1'
+                            label: 'Square 1:1'
+                            value: 1-1
+                        -
+                            label: 'Horizontal 16:9'
+                            value: 16-9
+                        -
+                            label: 'Horizontal 4:3'
+                            value: 4-3
+                        -
+                            label: 'Vertical 4:3'
+                            value: v-4-3
+                validation:
+                    required: required
+            image:
+                name: Image
+                type: assets
+                group: General
+                attributes:
+                    mimetype:
+                        - image
+                    multiSelect: ''
+                    help: ''
+                validation:
+                    required: ''
             content:
                 name: Content
                 type: replicator

@@ -1,12 +1,41 @@
 @extends(layout())
 
+@php
+    if ($entry->categories) {
+        $mainCategory = $entry->categories->where('parent_id',0)->first();
+    }
+@endphp
+
 {{-- Template Settings --}}
 @section('page-id', 'scrapbook')
 @section('main-class', 'd-flex align-items-stretch')
 
+{{-- Set Open Graph Data --}}
+@component('components.social-media.tags', [
+  'image' => isset($entry->share_image->slug) ? $entry->share_image->path() : null,
+  'title' => $entry->share_title ?? null,
+  'desc'  => $entry->share_description ?? null,
+  'type'  => 'article'
+  ])
+  <meta property="article:published_time" content="{{ $entry->publish_at }}" />
+  <meta property="article:modified_time" content="{{ $entry->updated_at }}" />
+  @if ($entry->expire_at)
+  <meta property="article:expiration_time" content="{{ $entry->expire_at }}" />
+  @endif
+  @if ($mainCategory)
+    <meta property="article:section" content="{{ $mainCategory->name }}" />
+  @endif
+  @if ($entry->categories)
+  @foreach ($entry->categories as $tag)
+  <meta property="article:tag" content="{{$tag->name}}" />
+  @endforeach
+  @endif
+@endcomponent
+
+
 
 {{-- Template Content --}}
-@section('content')
+@section('banner')
 <div class="post-header">
     <div class="post-header__container container text-center">
         <h1 class="mb-3">{{ $entry->display_name ? $entry->display_name : $entry->name }}</h1>
@@ -19,16 +48,15 @@
                 <a href="{{ url($postcat->path()) }}">{{ $postcat->name }}</a>@unless($loop->last), @endunless
             @endforeach
             @endif
-            {{-- <a href="{{ url($entry->uri) }}#disqus_thread">Post a Comment</a> --}}
         </p>
     </div>
     
-
-    @include('partials.navigation.breadcrumbs', [
-        'parent_category' => $entry->categories->where('parent_id',0)->first()
-    ])
+    {{-- Breadcrumb --}}
+    @include('partials.navigation.breadcrumbs')
 </div>
+@endsection
 
+@section('content')
 <div class="post-content">
     @if ($entry->headline)
     <div class="container mb-5">
