@@ -54,19 +54,18 @@
 @endsection
 
 @push('bottomScripts')
-{{-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-512873b2612d88df"></script> --}}
+<script id="dsq-count-scr" src="//ika-ink.disqus.com/count.js" async></script>
 <script>
-    var disqus_config = function () {
-        this.page.url = '{{ url($entry->uri) }}';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'scrapbook-post-{{ $entry->id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        this.page.title = '{{ $entry->display_name ? $entry->display_name : $entry->name }}';
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://ika-ink.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <script id="dsq-count-scr" src="//ika-ink.disqus.com/count.js" async></script>
+var disqus_config = function () {
+    this.page.url = '{{ url($entry->uri) }}';
+    this.page.identifier = 'scrapbook-post-{{ $entry->id }}';
+    this.page.title = '{{ $entry->display_name ? $entry->display_name : $entry->name }}';
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ika-ink.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
 @endpush
