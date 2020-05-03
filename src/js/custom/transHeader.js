@@ -14,7 +14,7 @@ export default class transHeader {
     this.element = document.querySelector(header)
     this.classTarget = document.querySelector(target)
     this.scrollClass = scrollClass
-    this.offSet = this.element.clientHeight
+    this.offSet = 1
 
     this.init()
   }

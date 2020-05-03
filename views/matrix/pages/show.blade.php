@@ -20,8 +20,7 @@
   @component('components.page.header', [
       'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
       'subtitle'   => $entry->subtitle,
-      'align'      => 'left',
-      'breadcrumb' => false
+      'breadcrumb' => true
     ])
   @endcomponent
 @endsection

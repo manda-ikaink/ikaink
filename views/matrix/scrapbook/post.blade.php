@@ -36,15 +36,13 @@
 
 {{-- Template Content --}}
 @section('banner')
-@section('banner')
     @component('components.page.header', [
       'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
-      'subtitle'   => null,
+      'subtitle'   => 'Posted on ' . date_format($entry->publish_at, 'M d, Y'),
       'breadcrumb' => true
     ])
-        <p class="mb-0">Posted on {{ date_format($entry->publish_at, 'M d, Y') }}</p>
         @if ($entry->categories->count())
-        <p class="mt-2 mb-0">
+        <p class="mb-0">
             <span class="fas fa-tag fa-fw"></span>
             @foreach($entry->categories as $postcat)
                 <a href="{{ url($postcat->path()) }}">{{ $postcat->name }}</a>@unless($loop->last), @endunless

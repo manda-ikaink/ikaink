@@ -2,14 +2,11 @@
 	padding-top: 170px; 
     background: rgba($almost-black, 0.5);
 
-    &__container { 
-        padding-bottom: rem(40px); 
-	}
+    &__container { padding-bottom: rem(40px); }
 	
-	.hero-title,
-	.hero-subtitle {
-		line-height: 1.25;
-	}
+	.hero-title { line-height: 1.25; }
+
+	.hero-subtitle { line-height: 1.5; }
 }
 
 .hero {
@@ -34,7 +31,7 @@
 		font-size: rem(16px);
 		letter-spacing: $letter-spacing-header-lg;
 		line-height: 1.75;
-		margin: 1rem 0 0;
+		margin-bottom: 0;
 		text-shadow: 3px 3px 5px $deep-blue;
 		text-transform: uppercase;
 		max-width: 100%; 
