@@ -96,20 +96,3 @@
         }
     }
 }
-
-.post-header {
-    padding-top: 150px; 
-    background: rgba($almost-black, 0.5);
-
-    &__container { 
-        max-width: 1000px;
-        padding-bottom: rem(40px); 
-    }
-}
-
-.post-content {
-    flex: 1 1 auto;
-    padding-top: rem(60px);
-    padding-bottom: rem(60px);
-    background-color: $deep-blue;
-}

@@ -36,28 +36,26 @@
 
 {{-- Template Content --}}
 @section('banner')
-<div class="post-header">
-    <div class="post-header__container container text-center">
-        <h1 class="mb-3">{{ $entry->display_name ? $entry->display_name : $entry->name }}</h1>
-
-        <p class="mb-0">
-            Posted on {{ date_format($entry->publish_at, 'M d, Y') }} | 
-            @if ($entry->categories->count())
+@section('banner')
+    @component('components.page.header', [
+      'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
+      'subtitle'   => null,
+      'breadcrumb' => true
+    ])
+        <p class="mb-0">Posted on {{ date_format($entry->publish_at, 'M d, Y') }}</p>
+        @if ($entry->categories->count())
+        <p class="mt-2 mb-0">
             <span class="fas fa-tag fa-fw"></span>
             @foreach($entry->categories as $postcat)
                 <a href="{{ url($postcat->path()) }}">{{ $postcat->name }}</a>@unless($loop->last), @endunless
             @endforeach
-            @endif
         </p>
-    </div>
-    
-    {{-- Breadcrumb --}}
-    @include('partials.navigation.breadcrumbs')
-</div>
+        @endif
+    @endcomponent
 @endsection
 
 @section('content')
-<div class="post-content">
+<div class="page-content">
     @if ($entry->headline)
     <div class="container mb-5">
         <p class="text-display--xs mb-0">{{ $entry->headline }}</p>

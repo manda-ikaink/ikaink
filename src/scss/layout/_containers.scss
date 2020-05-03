@@ -1,13 +1,14 @@
-.page-content,
-%page-content {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .page,
 %page {
   padding-top: rem(180px);
   padding-bottom: rem(100px);
+}
+
+.page-content {
+  flex: 1 1 auto;
+  padding-top: rem(60px);
+  padding-bottom: rem(60px);
+  background-color: $deep-blue;
 }
 
 // Styled sections
