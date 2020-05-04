@@ -1,6 +1,51 @@
 .page-banner {
 	padding-top: 170px; 
-    background: rgba($almost-black, 0.5);
+	background: rgba($almost-black, 0.5);
+	
+	&--has-video {
+		background: $almost-black;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background: rgba($almost-black, 0.5);
+		}
+
+		// Unfortnate override to jarallax image, unable to change via plugin settings w/o customization
+		#jarallax-container-0 > div {
+			background: $almost-black url('../assets/images/loading.svg') no-repeat center center !important;
+			transition: all 0.5s ease!important;
+		}
+	}
+
+	&__video-link {
+		display: none;
+
+		@include media-up(md) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+			display: inline-block;
+			margin: 15px;
+			font-size: 30px;
+			line-height: 1;
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $white;
+			}
+		}
+	}
 
     &__container { padding-bottom: rem(40px); }
 	

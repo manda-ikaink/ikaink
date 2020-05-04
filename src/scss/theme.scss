@@ -65,6 +65,7 @@
 @import "components/modal";
 @import "components/ol-panel";
 @import "components/pagination";
+@import "components/panels";
 @import "components/social-links";
 
 // Layout
@@ -77,5 +78,6 @@
 @import "modules/modules";
 
 // Pages
+@import "pages/about";
 @import "pages/homepage";
 @import "pages/scrapbook";

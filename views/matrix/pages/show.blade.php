@@ -20,6 +20,7 @@
   @component('components.page.header', [
       'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
       'subtitle'   => $entry->subtitle,
+      'video'      => $entry->video,
       'breadcrumb' => true
     ])
   @endcomponent
@@ -35,3 +36,17 @@
   @endunless
 </div>
 @endsection
+
+@if ($entry->video)
+@push('bottomScripts')
+    <!-- Jarallax -->
+    <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
+    <script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
+    <script>
+        jarallax(document.querySelectorAll('.jarallax'), {
+            videoStartTime: {{ $entry->video_start }},
+            videoEndTime: {{ $entry->video_end }}
+        });
+    </script>
+@endpush
+@endif

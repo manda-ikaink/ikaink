@@ -39,6 +39,7 @@
     @component('components.page.header', [
       'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
       'subtitle'   => 'Posted on ' . date_format($entry->publish_at, 'M d, Y'),
+      'video'      => $entry->video,
       'breadcrumb' => true
     ])
         @if ($entry->categories->count())
@@ -92,4 +93,20 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+
+@if ($entry->video)
+<!-- Jarallax -->
+<script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
+<script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
+<script>
+    jarallax(document.querySelectorAll('.jarallax'), {
+        videoStartTime: {{ $entry->video_start }},
+        videoEndTime: {{ $entry->video_end }}
+    });
+
+    $('.jarallax video').on('play', (event) => {
+        console.log('video ready', event);
+    });
+</script>
+@endif
 @endpush
