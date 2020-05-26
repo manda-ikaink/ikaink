@@ -17,7 +17,7 @@
 {{-- Template Content --}}
 @section('content')
     {{-- Header --}}
-    <div class="scrapbook-header">
+    <div class="page-heading">
         <h1 class="text-center">Scrapbook</h1>
         <span class="text-hr">スクラップブック</span>
 
@@ -28,12 +28,12 @@
             </a>
 
             @if ($category)
-                <a href="{{ url($collection->slug) }}" class="active-filter d-inline-block mb-3" title="Remove category filter: {{ $category->name }}">{{ $category->name }} &times;</a>
+                <a href="{{ url($collection->slug) }}" class="scrapbook-active-filter d-inline-block mb-3" title="Remove category filter: {{ $category->name }}">{{ $category->name }} &times;</a>
             @endif
         </div>
 
         {{-- Filters --}}
-        <div id="scrapbook-filters" class="scrapbook-header__filters bg--green-teal collapse" aria-labelledby="scrapbook-filters-toggle">
+        <div id="scrapbook-filters" class="scrapbook-filters bg--green-teal collapse" aria-labelledby="scrapbook-filters-toggle">
             <div class="container pt-4 pb-4">
                 <ul class="row list-unstyled mb-0 pb-4">
                     @foreach($categories->where('parent_id', 0) as $cat)

@@ -14,6 +14,7 @@
 		"layouts.default": "ThemeSettingsComposer",
 		"components.social-media.tags": "ThemeSettingsComposer",
 		"matrix.scrapbook.index": "ScrapbookComposer",
+		"matrix.gallery.index": "GalleryComposer",
 		"seo::sitemap": "SitemapComposer"
 	},
 	"settings": {

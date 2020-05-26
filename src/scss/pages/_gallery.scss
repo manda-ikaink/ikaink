@@ -1,0 +1,115 @@
+.gallery-listing {
+    .container {
+        max-width: 1000px;
+    }
+
+    &__column {
+        &:nth-child(even) {
+            .gallery-card { 
+                @include media-up(md) { margin-top: rem(20px); }
+            }
+        }
+    }
+}
+
+.gallery-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto rem(20px);
+    border: 6px solid $white;
+    border-bottom: 60px solid $white;
+    box-shadow: inset 0 0 20px rgba($black, 0.2);
+    color: $white;
+    transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+
+    &--sm { max-width: 400px; }
+
+    &:hover,
+    &:focus {
+        color: $white;
+
+        .gallery-card__header { 
+            .gallery-card--lg & { background-color: rgba($black, 0.5); }
+        }
+
+        .gallery-card__container img { transform: translate(-50%,-50%) scale(1.0); }
+    }
+
+    &__container {
+        position: relative;
+        padding-top: 80%;
+        overflow: hidden;
+
+        .gallery-card--sm & { padding-top: 100%; }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            z-index: 0;
+            transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+            transform: translate(-50%,-50%) scale(1.1);
+    
+            &.lazy,
+            &.lazyloading {
+                opacity: 1;
+                filter: blur(20px) grayscale(100%);
+            }
+    
+            &.lazyloaded {
+                opacity: 1;
+                filter: blur(0) grayscale(0);
+            }
+        }
+    }
+
+    &__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        transition: all 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+
+        .gallery-card--lg & { background-color: rgba($black, 0.2); }
+
+        .gallery-card--sm & {
+            top: 100%;
+            height: 60px;
+
+            > span {
+                font-size: 13px;
+                color: $deep-blue;
+            }
+        }
+    }
+}
+
+.gallery-entry {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    background: $white;
+
+    &__image {
+        position: relative;
+        padding-top: 100%;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            z-index: 0;
+            transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+    }
+}
