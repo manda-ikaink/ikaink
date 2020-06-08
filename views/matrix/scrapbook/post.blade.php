@@ -61,7 +61,7 @@
         <hr>
     </div>
     @endif
-
+    
     @unless ($entry->content->isEmpty())
     @foreach ($entry->content as $section)
         @php $sectionSet = $section['set']; @endphp

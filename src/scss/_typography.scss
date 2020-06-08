@@ -173,3 +173,16 @@ a {
     border-top: 1px solid $white;
   }
 }
+
+.drop-cap {
+	p:first-of-type:first-letter {
+		padding-top: 15px;
+		padding-right: 10px;
+		padding-left: 0;
+		font-family: $headings-font-family;
+		font-size: rem(94px);
+		line-height: 0.69;
+		color: inherit;
+		float: left;
+	}
+}

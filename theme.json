@@ -15,6 +15,7 @@
 		"components.social-media.tags": "ThemeSettingsComposer",
 		"matrix.scrapbook.index": "ScrapbookComposer",
 		"matrix.gallery.index": "GalleryComposer",
+		"matrix.projects.index": "ProjectsComposer",
 		"seo::sitemap": "SitemapComposer"
 	},
 	"settings": {
