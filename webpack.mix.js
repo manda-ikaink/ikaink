@@ -57,7 +57,7 @@ mix.webpackConfig({
   devtool: sourceMap,
   plugins: [
     new FaviconsWebpackPlugin({
-      logo: './assets/images/favicon.png',
+      logo: './dist/images/favicon.png',
       outputPath: '/favicons',
       cache: true,
       inject: false,

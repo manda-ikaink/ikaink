@@ -4,7 +4,7 @@
 		@if ($isHome)
 		<h1 class="page-header__logo">
 			<a class="d-flex align-items-center justify-content-center" href="/">
-				<img class="page-header__logo--center svg drop-shadow" src="{{ theme('assets/images/ika-ink-large-white.svg') }}" alt="ika INK Logo" title="{{ setting('website_title') }}">
+				<img class="page-header__logo--center svg drop-shadow" src="{{ theme('dist/images/ika-ink-large-white.svg') }}" alt="ika INK Logo" title="{{ setting('website_title') }}">
 				<span class="page-header__logo--left drop-shadow">ika</span>
 				<span class="page-header__logo--right drop-shadow">INK</span>
 			</a>
@@ -12,7 +12,7 @@
 		@else
 		<div class="page-header__logo">
 			<a class="d-flex align-items-center justify-content-center" href="/">
-				<img class="page-header__logo--center svg drop-shadow" src="{{ theme('assets/images/ika-ink-large-white.svg') }}" alt="ika INK Logo" title="{{ setting('website_title') }} - {{ setting('website_slogan') }}">
+				<img class="page-header__logo--center svg drop-shadow" src="{{ theme('dist/images/ika-ink-large-white.svg') }}" alt="ika INK Logo" title="{{ setting('website_title') }} - {{ setting('website_slogan') }}">
 				<span class="page-header__logo--left drop-shadow">ika</span>
 				<span class="page-header__logo--right drop-shadow">INK</span>
 			</a>

@@ -73,55 +73,55 @@
 	}
 }
 
-.moon-object,
-%moon-object {
-  position: fixed;
-  top: 50vh;
-  left: 50vw;
-  overflow: visible;
+// .moon-object,
+// %moon-object {
+//   position: fixed;
+//   top: 50vh;
+//   left: 50vw;
+//   overflow: visible;
 
-  &__container {
-    position: relative;
-    display: block;
-    width: 1px;
-    height: 1px;
-    overflow: visible;
-    animation: spin-clockwise 60s linear infinite;
-  }
+//   &__container {
+//     position: relative;
+//     display: block;
+//     width: 1px;
+//     height: 1px;
+//     overflow: visible;
+//     animation: spin-clockwise 60s linear infinite;
+//   }
 
-  &__moon {
-    position: absolute;
-    bottom: 25vw;
-    left: 25vw;
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url('../../images/moon.png') no-repeat center center/cover;
-    border-radius: 50%;
-    overflow: hidden;
-    animation: spin-clockwise 15s linear infinite;
+//   &__moon {
+//     position: absolute;
+//     bottom: 25vw;
+//     left: 25vw;
+//     display: block;
+//     width: 50px;
+//     height: 50px;
+//     background: url('../../images/moon.png') no-repeat center center/cover;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     animation: spin-clockwise 15s linear infinite;
 
-    @include media-up(sm) {
-      width: 100px;
-      height: 100px;
-    }
+//     @include media-up(sm) {
+//       width: 100px;
+//       height: 100px;
+//     }
 
-    &:after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: inset -10px -10px 10px 10px rgba($black, 0.8);
-      animation: spin-counter-clockwise 30s linear infinite;
+//     &:after {
+//       content: '';
+//       display: block;
+//       width: 50px;
+//       height: 50px;
+//       border-radius: 50%;
+//       box-shadow: inset -10px -10px 10px 10px rgba($black, 0.8);
+//       animation: spin-counter-clockwise 30s linear infinite;
 
-      @include media-up(sm) {
-        width: 100px;
-        height: 100px;
-      }
-    }
-  }
-}
+//       @include media-up(sm) {
+//         width: 100px;
+//         height: 100px;
+//       }
+//     }
+//   }
+// }
 
 .star-object {
   $shooting-time: 10s;

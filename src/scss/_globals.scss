@@ -29,8 +29,8 @@ body {
     height: 100vh;
     z-index: -10;
     background: 
-      no-repeat url('../assets/images/starchart.svg') center center / cover,
-      no-repeat url('../assets/images/nebula.jpg') center bottom / cover,
+      no-repeat url('../dist/images/starchart.svg') center center / cover,
+      no-repeat url('../dist/images/nebula.jpg') center bottom / cover,
       $brand-gray-dark;
   }
 }
@@ -46,29 +46,6 @@ body {
 #page { 
   min-height: 100vh; // 1
   overflow: hidden; // 1
-}
-
-/* 
- * Global Styles
- *
- * 1. Display screen size breakpoint in corner of browser for QA. Remove on finalized production.
- */
-#page { // 1
-  &:before {
-    background: #000;
-    color: #fff;
-    content: 'xs';
-    padding: 5px;
-    text-transform: uppercase;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 9999999;
-
-    @each $point, $breakpoint in $grid-breakpoints {
-      @include media-up('#{$point}') { content: '#{$point}'; }
-    }
-  }
 }
 
 img { max-width: 100%; }

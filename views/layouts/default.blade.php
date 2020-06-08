@@ -32,9 +32,9 @@
 	{{-- Google Analytics --}}
 	@include('analytics::partials.tracking_code')
 
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme('dist/favicons/apple-touch-icon.png') }}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{{ theme('dist/favicons/favicon-16x16.png') }}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{ theme('dist/favicons/favicon-32x32.png') }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme('dist/favicons/apple-touch-icon.png') }}?v=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ theme('dist/favicons/favicon-16x16.png') }}?v=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ theme('dist/favicons/favicon-32x32.png') }}?v=1">
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ theme('dist/'.theme_mix('/vendor.css', 'dist')) }}">
 	<link rel="stylesheet" type="text/css" href="{{ theme('dist/'.theme_mix('/theme.css', 'dist')) }}">

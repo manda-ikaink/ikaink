@@ -19,15 +19,15 @@
 		"seo::sitemap": "SitemapComposer"
 	},
 	"settings": {
-		"public_images": "assets/images",
-		"site_logo": "assets/images/logo.png",
+		"public_images": "dist/images",
+		"site_logo": "dist/images/logo.png",
 		"theme_color": "#ffffff",
 		"custom_sitemap": false,
 		"images": {
-			"1x1": "assets/images/1x1.png",
-			"default": "assets/images/galaxy.jpg",
-			"loading": "assets/images/loading.svg",
-			"page-banner": "assets/images/galaxy.jpg"
+			"1x1": "dist/images/1x1.png",
+			"default": "dist/images/galaxy.jpg",
+			"loading": "dist/images/loading.svg",
+			"page-banner": "dist/images/galaxy.jpg"
 		},
 		"icons": {},
 		"pagination": {}
