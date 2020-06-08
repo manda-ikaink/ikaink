@@ -4,18 +4,12 @@
 @section('page-id', 'projects')
 @section('main-class', 'd-flex align-items-stretch')
 
-{{-- Status Options --}}
-@php
-    $status = [
-        'pending'     => 'Pending',
-        'planning'    => 'Planning',
-        'canceled'    => 'Canceled',
-        'complete'    => 'Complete',
-        'ongoing'     => 'Ongoing',
-        'on-hold'     => 'On Hold',
-        'blocked'     => 'Blocked'
-    ];
-@endphp
+{{-- Set page scripts --}}
+@include('partials.script-manager.script-sets', [
+'head'   => $collection->head_scripts,
+'top'    => $collection->top_scripts,
+'bottom' => $collection->btm_scripts
+])
 
 {{-- Set Open Graph Data --}}
 @component('components.social-media.tags', [
@@ -31,6 +25,22 @@
   @endif
 @endcomponent
 
+{{-- Status Options --}}
+@php
+    $status = [
+        'pending'     => 'Pending',
+        'planning'    => 'Planning',
+        'canceled'    => 'Canceled',
+        'complete'    => 'Complete',
+        'ongoing'     => 'Ongoing',
+        'on-hold'     => 'On Hold',
+        'blocked'     => 'Blocked'
+    ];
+@endphp
+
+
+
+{{-- Template Content --}}
 @section('banner')
     @component('components.page.header', [
       'heading'    => $entry->display_name ? $entry->display_name : $entry->name,
@@ -41,9 +51,6 @@
     @endcomponent
 @endsection
 
-
-
-{{-- Template Content --}}
 @section('content')
 <div class="page-content">
     <div class="container">

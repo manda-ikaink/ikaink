@@ -4,6 +4,23 @@
 @section('page-id', 'gallery')
 @section('main-class', 'd-flex align-items-stretch')
 
+{{-- Set page scripts --}}
+@include('partials.script-manager.script-sets', [
+'head'   => $collection->head_scripts,
+'top'    => $collection->top_scripts,
+'bottom' => $collection->btm_scripts
+])
+
+{{-- Set Open Graph Data --}}
+@component('components.social-media.tags', [
+  'image' => isset($entry->image->slug) ? $entry->image->path() : null,
+  'title' => 'Gallery - ' . $entry->name,
+  'desc'  => null,
+  'type'  => null
+  ])
+@endcomponent
+
+
 
 {{-- Template Content --}}
 @section('banner')

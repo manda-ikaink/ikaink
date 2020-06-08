@@ -18,6 +18,13 @@ class ProjectsComposer extends GlobalsComposer
         $entries    = $this->getEntries('projects','project')->sorted()->enabled()->live()->get();;
         $entry      = $this->getEntry($viewData);
 
+        if ($collection) {
+            // Add scripts to collection
+            $collection->head_scripts = $this->getScripts('projects', 'head');
+            $collection->top_scripts  = $this->getScripts('projects', 'top');
+            $collection->btm_scripts  = $this->getScripts('projects', 'bottom');
+        }
+
         $view->with('collection', $collection);
         $view->with('entries', $entries);
         $view->with('entry', $entry);

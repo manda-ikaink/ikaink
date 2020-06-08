@@ -4,6 +4,13 @@
 @section('page-id', 'scrapbook')
 @section('main-class', 'd-flex align-items-stretch')
 
+{{-- Set page scripts --}}
+@include('partials.script-manager.script-sets', [
+'head'   => $collection->head_scripts,
+'top'    => $collection->top_scripts,
+'bottom' => $collection->btm_scripts
+])
+
 {{-- Image Ratio Options --}}
 @php
     $ratios = [

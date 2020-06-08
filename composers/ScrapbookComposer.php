@@ -27,6 +27,13 @@ class ScrapbookComposer extends GlobalsComposer
             $posts = $posts->sorted()->enabled()->live()->paginate($perPage);
         }
 
+        if ($collection) {
+            // Add scripts to collection
+            $collection->head_scripts = $this->getScripts('scrapbook', 'head');
+            $collection->top_scripts  = $this->getScripts('scrapbook', 'top');
+            $collection->btm_scripts  = $this->getScripts('scrapbook', 'bottom');
+        }
+
         $view->with('collection', $collection);
         $view->with('posts', $posts);
         $view->with('entry', $entry);
