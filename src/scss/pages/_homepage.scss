@@ -161,20 +161,56 @@
 
     &:after { transform: translateX(50%) rotateZ(-45deg); }
     
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        $delay: random(9999) + 0ms;
-        top: calc(50% - #{random(600) - 200px});
-        left: calc(50% - #{random(500) + 0px});
-        animation-delay: $delay;
-        opacity: random(50) / 100 + 0.5;
-        
-        &::before,
-        &::after {
-          animation-delay: $delay;
-        }
+    &:first-child {
+      top: calc(50% - -111px);
+      left: calc(50% - 178px);
+      opacity: .74;
+      animation-delay: 2788ms;
+
+      &:before,
+      &:after {
+        animation-delay: 2788ms;
       }
     }
+
+    &:nth-child(2) {
+      top: calc(50% - -100px);
+      left: calc(50% - 436px);
+      opacity: .94;
+      animation-delay: 1414ms;
+      
+
+      &:before,
+      &:after {
+        animation-delay: 1414ms;
+      }
+    }
+
+    &:nth-child(3) {
+      top: calc(50% - 185px);
+      left: calc(50% - 254px);
+      opacity: .92;
+      animation-delay: 1129ms;
+      
+      &:before,
+      &:after {
+        animation-delay: 1129ms;
+      }
+    }
+    // @for $i from 1 through 3 {
+    //   &:nth-child(#{$i}) {
+    //     $delay: random(9999) + 0ms;
+    //     top: calc(50% - #{random(600) - 200px});
+    //     left: calc(50% - #{random(500) + 0px});
+    //     animation-delay: $delay;
+    //     opacity: random(50) / 100 + 0.5;
+        
+    //     &::before,
+    //     &::after {
+    //       animation-delay: $delay;
+    //     }
+    //   }
+    // }
   }
 }
 
