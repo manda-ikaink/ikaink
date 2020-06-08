@@ -1,0 +1,48 @@
+.nav-panel {
+    width: 100%;
+    padding: 120px 15px 20px;
+    background: $almost-black;
+
+    @include media-up(md) { width: 250px; }
+
+    &__links {
+        font-size: 13px;
+
+        a { 
+            color: $white;
+            
+            &:hover,
+            &:focus {
+                color: $white;
+            }
+        }
+    }
+}
+
+.nav {
+    height: auto;
+    list-style: none;
+    overflow-y: auto;
+
+    &__item {
+        margin-bottom: rem(20px);
+    }
+
+    &__link {
+        font-family: $headings-font-family;
+        font-weight: lighter;
+        letter-spacing: 0.3em;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {  
+            color: $white;
+            text-shadow: 0 0 3px $white; 
+            text-decoration: underline;
+        }
+    }
+}

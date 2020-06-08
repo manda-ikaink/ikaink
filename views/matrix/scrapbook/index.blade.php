@@ -14,48 +14,53 @@
     ];
 @endphp
 
-{{-- Template Content --}}
-@section('content')
-    {{-- Header --}}
-    <div class="page-heading">
-        <h1 class="text-center">Scrapbook</h1>
-        <span class="text-hr">スクラップブック</span>
+@section('banner')
+<div class="page-heading">
+    <h1 class="text-center">Scrapbook</h1>
+    <span class="text-hr">スクラップブック</span>
 
-        @if ($categories)
-        <div class="container d-flex align-items-center justify-content-between">
-            <a href="#scrapbook-filters" id="scrapbook-filters-toggle" class="text-display--xxs d-inline-block mb-3 collapsed" data-toggle="collapse" href="#scrapbook-filters" role="button" aria-expanded="false" aria-controls="scrapbook-filters">
-                Filter <span class="fas fa-plus fa-fw" aria-hidden="true"></span>
-            </a>
+    @if ($categories)
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="#scrapbook-filters" id="scrapbook-filters-toggle" class="text-display--xxs d-inline-block mb-3 collapsed" data-toggle="collapse" href="#scrapbook-filters" role="button" aria-expanded="false" aria-controls="scrapbook-filters">
+            Filter <span class="fas fa-plus fa-fw" aria-hidden="true"></span>
+        </a>
 
-            @if ($category)
-                <a href="{{ url($collection->slug) }}" class="scrapbook-active-filter d-inline-block mb-3" title="Remove category filter: {{ $category->name }}">{{ $category->name }} &times;</a>
-            @endif
-        </div>
-
-        {{-- Filters --}}
-        <div id="scrapbook-filters" class="scrapbook-filters bg--green-teal collapse" aria-labelledby="scrapbook-filters-toggle">
-            <div class="container pt-4 pb-4">
-                <ul class="row list-unstyled mb-0 pb-4">
-                    @foreach($categories->where('parent_id', 0) as $cat)
-                    <li class="col-6 col-md-4">
-                        <a href="{{ url($cat->path()) }}" @if ($category)@if ($category->id === $cat->id)class="active"@endif @endif>{{ $cat->name }}</a>
-
-                        @if ($cat->children)
-                        <ul class="mb-0">
-                            @foreach ($cat->children as $subcat)
-                            <li><a href="{{ url($subcat->path()) }}">{{ $subcat->name }}</a></li>
-                            @endforeach
-                        </ul>
-                        @endif
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
+        @if ($category)
+            <a href="{{ url($collection->slug) }}" class="scrapbook-active-filter d-inline-block mb-3" title="Remove category filter: {{ $category->name }}">{{ $category->name }} &times;</a>
         @endif
     </div>
 
-    <div class="scrapbook-listing">
+    {{-- Filters --}}
+    <div id="scrapbook-filters" class="scrapbook-filters bg--green-teal collapse" aria-labelledby="scrapbook-filters-toggle">
+        <div class="container pt-4 pb-4">
+            <ul class="row list-unstyled mb-0 pb-4">
+                @foreach($categories->where('parent_id', 0) as $cat)
+                <li class="col-6 col-md-4">
+                    <a href="{{ url($cat->path()) }}" @if ($category)@if ($category->id === $cat->id)class="active"@endif @endif>{{ $cat->name }}</a>
+
+                    @if ($cat->children)
+                    <ul class="mb-0">
+                        @foreach ($cat->children as $subcat)
+                        <li><a href="{{ url($subcat->path()) }}">{{ $subcat->name }}</a></li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    @endif
+</div>
+@endsection
+
+{{-- Template Content --}}
+@section('content')
+    <div class="scrapbook-listing pt-0">
+        <div class="d-flex align-items-center justify-content-center">
+            @include('partials.navigation.breadcrumbs')
+        </div>
+
         {{-- Pagination Status --}}
         @if ($posts->count())
         {{ $posts->links('partials.navigation.pagination-status') }}

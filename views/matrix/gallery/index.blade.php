@@ -10,6 +10,9 @@
 <div class="page-heading">
     <h1 class="text-center">Gallery</h1>
     <span class="text-hr">アートギャラリー</span>
+    <div class="d-flex align-items-center justify-content-center">
+        @include('partials.navigation.breadcrumbs')
+    </div>
 </div>
 @endsection
 

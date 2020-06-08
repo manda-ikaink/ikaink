@@ -18,16 +18,7 @@
         @if ($i < count(Request::segments()) & $i > 0)
           @php($path .= '/' . Request::segment($i))
   
-          @if(Request::segment($i) === 'category')
-            @include ('partials.navigation.breadcrumb-item', [
-              'active'   => false,
-              'url'      => url(Request::segment(1)),
-              'title'    => title_case(str_replace('-', ' ', Request::segment($i))),
-              'position' => $item_position
-              ])
-  
-            @php( $item_position++ )
-          @else
+          @unless(Request::segment($i) === 'category')
             @include ('partials.navigation.breadcrumb-item', [
               'active'   => false,
               'url'      => url($path),
@@ -35,7 +26,7 @@
               'position' => $item_position
               ])
             @php( $item_position++ )
-          @endif
+          @endunless
         @else
           {{-- If passing through a parent collection --}}
           @if(isset($parent_collection))

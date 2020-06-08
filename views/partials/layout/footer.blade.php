@@ -21,27 +21,8 @@
         <a href="/privacy-policy">Privacy Policy</a>&nbsp;|&nbsp;
         <a href="/terms-of-service">Terms of Service</a>&nbsp;|&nbsp;
         <a href="/sitemap">Sitemap</a>&nbsp;|&nbsp;
-        @if ($globals->credits_modal)
-        <a href="#credits" id="credits-link"  data-toggle="modal" data-target="#credits" aria-label="Open credits">Credits</a>
-        @endif
+        <a href="/credits">Credits</a>
       </p>
     </div>
   </div>
 </footer>
-@if ($globals->credits_modal)
-<div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="credits-link" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="credits-title">Credits</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        {!! $globals->credits_modal !!}
-      </div>
-    </div>
-  </div>
-</div>
-@endif

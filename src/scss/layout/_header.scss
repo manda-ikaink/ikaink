@@ -38,12 +38,10 @@
 
 		&--center {
 			display: inline-block;
-			width: 90px;
+			width: 60px;
 			height: auto;
 			transition: all $header-transition; 
 			vertical-align: middle;
-
-			.scrolled & { width: 60px; }
 		}
 
 		&--left,
@@ -73,7 +71,24 @@
 		z-index: 9999;
 	}
 
-	&__menu-btn {
-		@include burger($width: 40px, $height: 3px, $gutter: 10px, $color: #fff)
+	&__nav-btn {
+		padding: 0;
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 3px rgba($white, 0.4);
+		}
+		
+		span {
+			@include burger(40px, 4px, 6px, $white, 2px, $ol-panel-timing-in);
+			display: block;
+		}
+
+		&.ol-panel-btn--active span {
+			@include burger-to-cross;
+		}
 	}
 }

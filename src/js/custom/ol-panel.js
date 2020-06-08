@@ -108,7 +108,8 @@ export default class OverlayPanel {
       afterClose: function () {},
       startEvent: 'DOMContentLoaded',
       container: document.body,
-      bodyNoscroll: true
+      bodyNoscroll: true,
+      focusFirst: true
     }
     this.settings = extend(this.defaults, options || {})
     this.panel =
@@ -268,7 +269,9 @@ export default class OverlayPanel {
       if (trigger) {
         this.current = trigger
         this.current.classList.add(className.btnCurrent)
-        this.focusable[0].focus()
+        if (this.settings.focusFirst) {
+          this.focusable[0].focus()
+        }
       }
 
       if (this.settings.bodyNoscroll) { document.body.classList.add(className.bodyNoscroll) }

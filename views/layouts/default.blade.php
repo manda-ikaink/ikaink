@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,13 @@
 	<meta name="theme-color" content="{{ theme_property('settings.theme_color') }}">
 	@yield('seo')
 	{!! seo()->generate() !!}
+	<link rel="canonical" href="{{ url()->current() }}">
+
+	<script>
+		// Change document class from no-js to js so we can detect this in css
+		document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+	</script>
+
 
 	{{-- Open Graph Tags --}}
 	@hasSection('tags')
@@ -45,8 +52,8 @@
 	@include('partials.script-manager.scripts',['scripts' => $globals->top_scripts])
 	@endif
 	@stack('topScripts')
+	<div class="preloader"></div>
 
-	{{-- Add wrapper #page around main content required if Vue enabled, cannot utilize body element --}}
 	<div id="page">
 		{{-- Conditional to detect homepage for header H1 --}}
 		@hasSection('homepage')

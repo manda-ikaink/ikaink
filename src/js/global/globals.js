@@ -4,13 +4,15 @@ import validateForm from '../forms/validation'
 import requireCheckbox from '../forms/requiredCheckbox'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import header from '../custom/transHeader'
-// import overlay from '../custom/ol-panel'
+import overlay from '../custom/ol-panel'
 import 'bootstrap/js/dist/modal'
 import 'bootstrap/js/dist/collapse'
 
 export default class Globals {
   constructor () {
-    // this.menu = new overlay('#nav-panel')
+    this.menu = new overlay('#nav-panel', {
+      focusFirst: false
+    })
     this.header = new header('#page-header', 'body', 'scrolled')
 
     this.init()
@@ -46,5 +48,10 @@ export default class Globals {
     requireCheckbox('.checkbox-group')
   }
 
-  custom () {}
+  custom () {
+    // Simple Preloader
+  window.addEventListener('load',function(){
+    document.querySelector('body').classList.add('preloaded')  
+  })
+  }
 }

@@ -19,8 +19,42 @@
 		</div>
 		@endif
 
+		@if (menu_exists('main_menu'))
 		<div class="page-header__nav-toggle" id="nav-toggle">
-			<a class="page-header__nav-btn" title="Menu"></a>
+			<div class="position-relative">
+				<button class="page-header__nav-btn" data-ol-toggle="#nav-panel" aria-controls="nav-panel" aria-label="Menu">
+					<span></span>
+				</button>
+			</div>
 		</div>
+		@endif
 	</div>
 </header>
+@if (menu_exists('main_menu'))
+<div id="nav-panel" class="nav-panel ol-panel ol-panel--right d-flex flex-column align-items-center justify-content-center">
+	@include('partials.navigation.navigation', [
+	'items' => menu('main_menu')->roots(), 
+	'id'    => 'main'
+	])
+	<div class="nav-panel__links mt-auto">
+		<div class="mb-3">
+		@include('partials.social-media.links', [
+          'class'     => 'justify-content-center mb-0',
+          'github'    => $globals->github,
+          'instagram' => $globals->instagram,
+          'twitter'   => $globals->twitter,
+          'youtube'   => $globals->youtube,
+          'linkedin'  => $globals->linkedin,
+          'pinterest' => $globals->pinterest
+		  ])
+		</div>
+		
+		<div class="text-center text-md-left">
+			<a href="/privacy-policy">Privacy Policy</a>&nbsp;|&nbsp;
+			<a href="/terms-of-service">Terms of Service</a>&nbsp;|&nbsp;
+			<a href="/sitemap">Sitemap</a>&nbsp;|&nbsp;
+			<a href="/credits">Credits</a>
+		</div>
+	</div>
+</div>
+@endif
