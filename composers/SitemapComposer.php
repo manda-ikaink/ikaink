@@ -16,11 +16,19 @@ class SitemapComposer extends GlobalsComposer
     {
         $pages = $this->getEntries('pages', 'pages')->enabled()->orderBy('name', 'asc')->get();
         // Blog Example:
-        // $blog = $this->getCollection('blog')->enabled()->first();
-        // $blogPosts = $this->getEntries('blog', 'posts')->enabled()->sorted()->live()->limit(50)->get();
+        $scrapbook = $this->getCollection('scrapbook')->first();
+        $posts = $this->getEntries('scrapbook', 'posts')->enabled()->sorted()->live()->limit(50)->get();
+        $gallery = $this->getCollection('gallery')->first();
+        $galleryPages = $this->getEntries('gallery', 'pages')->enabled()->sorted()->live()->get();
+        $projects = $this->getCollection('projects')->first();
+        $projectPages = $this->getEntries('projects', 'project')->enabled()->sorted()->live()->get();
 
         $view->with('pages', $pages);
-        // $view->with('blog', $blog);
-        // $view->with('blogPosts', $blogPosts);
+        $view->with('scrapbook', $scrapbook);
+        $view->with('posts', $posts);
+        $view->with('gallery', $gallery);
+        $view->with('galleryPages', $galleryPages);
+        $view->with('projects', $projects);
+        $view->with('projectPages', $projectPages);
     }
 }
