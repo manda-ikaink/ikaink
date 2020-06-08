@@ -11,8 +11,8 @@
 @endsection
 
 @section('content')
-  <div class="page-content">
-    <div class="container pt-5">
+  <div class="page-content pt-4">
+    <div class="container">
       {{-- Pages --}}
       <div class="sitemap__section pb-4">
         <h2>Pages</h2>
